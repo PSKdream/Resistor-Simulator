@@ -455,7 +455,7 @@ public class ui extends javax.swing.JFrame {
         String color = "";
         if (evt.getStateChange() == 1) {
             color = evt.getItem().toString();
-            Cal();
+            calculat();
         }
         switch (color) {
             case "Black":
@@ -494,7 +494,7 @@ public class ui extends javax.swing.JFrame {
     private void ComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComboBox2ItemStateChanged
         String color = "";
         if (evt.getStateChange() == 1) {
-            Cal();
+            calculat();
             //System.out.println(evt.getItem());
             color = evt.getItem().toString();
         }
@@ -535,7 +535,7 @@ public class ui extends javax.swing.JFrame {
     private void ComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComboBox3ItemStateChanged
         String color = "";
         if (evt.getStateChange() == 1) {
-            Cal();
+            calculat();
             //System.out.println(evt.getItem());
             color = evt.getItem().toString();
         }
@@ -576,7 +576,7 @@ public class ui extends javax.swing.JFrame {
     private void ComboBox4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComboBox4ItemStateChanged
         String color = "";
         if (evt.getStateChange() == 1) {
-            Cal();
+            calculat();
             //System.out.println(evt.getItem());
             color = evt.getItem().toString();
         }
@@ -617,7 +617,7 @@ public class ui extends javax.swing.JFrame {
     private void ComboBox5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComboBox5ItemStateChanged
         String color = "";
         if (evt.getStateChange() == 1) {
-            Cal();
+            calculat();
             //System.out.println(evt.getItem());
             color = evt.getItem().toString();
         }
@@ -649,7 +649,7 @@ public class ui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ComboBox5ItemStateChanged
 
-    public void Cal() {
+    public void calculat() {
         String[] ColorTab = new String[5];
         double sum = 0;
         double error = 0;
@@ -662,8 +662,6 @@ public class ui extends javax.swing.JFrame {
             int multiple = 100; //ตำแหน่ง
             for (int i = 0; i < 2; i++) {
                 switch (ColorTab[i]) {
-                    case "Black":
-                        break;
                     case "Brown":
                         sum = sum + (multiple * 1);
                         multiple = multiple / 10;
@@ -773,9 +771,7 @@ public class ui extends javax.swing.JFrame {
             int multiple = 10;
             for (int i = 0; i < 2; i++) {
                 switch (ColorTab[i]) {
-                    case "Black":
-                        break;
-                    case "Brown":
+                     case "Brown":
                         sum = sum + (multiple * 1);
                         multiple = multiple / 10;
                         break;
