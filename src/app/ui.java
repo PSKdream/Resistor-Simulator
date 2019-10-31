@@ -647,6 +647,7 @@ public class ui extends javax.swing.JFrame {
                 Panel5.setBackground(new Color(196, 202, 206));
                 break;
         }
+        
     }//GEN-LAST:event_ComboBox5ItemStateChanged
 
     public void calculat() {
