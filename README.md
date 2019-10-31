@@ -1,4 +1,4 @@
 # Resistor-Simulator_Gui
 
-This is calculator resistor program \n
-You can open project with netbeans8.2 
+This is calculator resistor program.
+You can open project with netbeans8.2. 
