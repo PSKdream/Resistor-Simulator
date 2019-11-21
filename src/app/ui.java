@@ -661,7 +661,7 @@ public class ui extends javax.swing.JFrame {
             ColorTab[3] = ComboBox4.getSelectedItem().toString();
             ColorTab[4] = ComboBox5.getSelectedItem().toString();
             int multiple = 100; //ตำแหน่ง
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i <= 2; i++) {
                 switch (ColorTab[i]) {
                     case "Brown":
                         sum = sum + (multiple * 1);
