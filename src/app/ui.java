@@ -650,7 +650,8 @@ public class ui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ComboBox5ItemStateChanged
 
-    public void calculat() {
+   private void calculat() {
+       calculat cal = new calculat();
         String[] ColorTab = new String[5];
         double sum = 0;
         double error = 0;
@@ -660,218 +661,29 @@ public class ui extends javax.swing.JFrame {
             ColorTab[2] = ComboBox3.getSelectedItem().toString();
             ColorTab[3] = ComboBox4.getSelectedItem().toString();
             ColorTab[4] = ComboBox5.getSelectedItem().toString();
-            int multiple = 100; //ตำแหน่ง
-            for (int i = 0; i <= 2; i++) {
-                switch (ColorTab[i]) {
-                    case "Brown":
-                        sum = sum + (multiple * 1);
-                        multiple = multiple / 10;
-                        break;
-                    case "Red":
-                        sum = sum + (multiple * 2);
-                        multiple = multiple / 10;
-                        break;
-                    case "Orange":
-                        sum = sum + (multiple * 3);
-                        multiple = multiple / 10;
-                        break;
-                    case "Yellow":
-                        sum = sum + (multiple * 4);
-                        multiple = multiple / 10;
-                        break;
-                    case "Green":
-                        sum = sum + (multiple * 5);
-                        multiple = multiple / 10;
-                        break;
-                    case "Blue":
-                        sum = sum + (multiple * 6);
-                        multiple = multiple / 10;
-                        break;
-                    case "Violet":
-                        sum = sum + (multiple * 7);
-                        multiple = multiple / 10;
-                        break;
-                    case "Grey":
-                        sum = sum + (multiple * 8);
-                        multiple = multiple / 10;
-                        break;
-                    case "White":
-                        sum = sum + (multiple * 9);
-                        multiple = multiple / 10;
-                        break;
-                }
-            }
-            switch (ColorTab[3]) {
-                case "Black":
-                    sum *= 1;
-                    break;
-                case "Brown":
-                    sum *= 10;
-                    break;
-                case "Red":
-                    sum *= 100;
-                    break;
-                case "Orange":
-                    sum *= 1000;
-                    break;
-                case "Yellow":
-                    sum *= 10000;
-                    break;
-                case "Green":
-                    sum *= 100000;
-                    break;
-                case "Blue":
-                    sum *= 1000000;
-                    break;
-                case "Violet":
-                    sum *= 10000000;
-                    break;
-                case "Gold":
-                    sum *= 0.1;
-                    break;
-                case "Silver":
-                    sum *= 0.01;
-                    break;
-            }
-            switch (ColorTab[4]) {
-                case "Brown":
-                    error = 1;
-                    break;
-                case "Red":
-                    error = 2;
-                    break;
-                case "Green":
-                    error = 0.5;
-                    break;
-                case "Blue":
-                    error = 0.25;
-                    break;
-                case "Violet":
-                    error = 0.10;
-                    break;
-                case "Grey":
-                    error = 0.05;
-                    break;
-                case "Gold":
-                    error = 5;
-                    break;
-                case "Silver":
-                    error = 10;
-                    break;
-            }
+            
+            sum = cal.var_Resitor(ColorTab);
+            error = cal.error(ColorTab);
+            
             ResistanceTextField.setValue(sum);
             ErrorTextField.setValue("+- " + error + " %");
-            MinTextField.setValue(sum - ((error / 100) * sum));
-            MaxTextField.setValue(sum + ((error / 100) * sum));
+            MinTextField.setValue(cal.Min_Error(sum, error));
+            MaxTextField.setValue(cal.Max_Error(sum, error));
         } else {
+            System.out.println("22222222");
             ColorTab[0] = ComboBox1.getSelectedItem().toString();
             ColorTab[1] = ComboBox2.getSelectedItem().toString();
             ColorTab[2] = null;
             ColorTab[3] = ComboBox4.getSelectedItem().toString();
             ColorTab[4] = ComboBox5.getSelectedItem().toString();
-            int multiple = 10;
-            for (int i = 0; i < 2; i++) {
-                switch (ColorTab[i]) {
-                     case "Brown":
-                        sum = sum + (multiple * 1);
-                        multiple = multiple / 10;
-                        break;
-                    case "Red":
-                        sum = sum + (multiple * 2);
-                        multiple = multiple / 10;
-                        break;
-                    case "Orange":
-                        sum = sum + (multiple * 3);
-                        multiple = multiple / 10;
-                        break;
-                    case "Yellow":
-                        sum = sum + (multiple * 4);
-                        multiple = multiple / 10;
-                        break;
-                    case "Green":
-                        sum = sum + (multiple * 5);
-                        multiple = multiple / 10;
-                        break;
-                    case "Blue":
-                        sum = sum + (multiple * 6);
-                        multiple = multiple / 10;
-                        break;
-                    case "Violet":
-                        sum = sum + (multiple * 7);
-                        multiple = multiple / 10;
-                        break;
-                    case "Grey":
-                        sum = sum + (multiple * 8);
-                        multiple = multiple / 10;
-                        break;
-                    case "White":
-                        sum = sum + (multiple * 9);
-                        multiple = multiple / 10;
-                        break;
-                }
-            }
-            switch (ColorTab[3]) {
-                case "Black":
-                    sum *= 1;
-                    break;
-                case "Brown":
-                    sum *= 10;
-                    break;
-                case "Red":
-                    sum *= 100;
-                    break;
-                case "Orange":
-                    sum *= 1000;
-                    break;
-                case "Yellow":
-                    sum *= 10000;
-                    break;
-                case "Green":
-                    sum *= 100000;
-                    break;
-                case "Blue":
-                    sum *= 1000000;
-                    break;
-                case "Violet":
-                    sum *= 10000000;
-                    break;
-                case "Gold":
-                    sum *= 0.1;
-                    break;
-                case "Silver":
-                    sum *= 0.01;
-                    break;
-            }
-            switch (ColorTab[4]) {
-                case "Brown":
-                    error = 1;
-                    break;
-                case "Red":
-                    error = 2;
-                    break;
-                case "Green":
-                    error = 0.5;
-                    break;
-                case "Blue":
-                    error = 0.25;
-                    break;
-                case "Violet":
-                    error = 0.10;
-                    break;
-                case "Grey":
-                    error = 0.05;
-                    break;
-                case "Gold":
-                    error = 5;
-                    break;
-                case "Silver":
-                    error = 10;
-                    break;
-            }
+
+            sum = cal.var_Resitor(ColorTab);
+            error = cal.error(ColorTab);
+            
             ResistanceTextField.setValue(sum);
             ErrorTextField.setValue("+- " + error + " %");
-            MinTextField.setValue(sum - ((error / 100) * sum));
-            MaxTextField.setValue(sum + ((error / 100) * sum));
+            MinTextField.setValue(cal.Min_Error(sum, error));
+            MaxTextField.setValue(cal.Max_Error(sum, error));
         }
     }
 
