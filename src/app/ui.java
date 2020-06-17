@@ -1,5 +1,5 @@
 package app;
-
+//bio
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -82,7 +82,7 @@ public class ui extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(closeProgram)
                 .addGap(16, 16, 16))
         );
